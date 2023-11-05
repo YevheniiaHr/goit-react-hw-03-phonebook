@@ -33,7 +33,7 @@ export class App extends Component {
     const contact = { id: nanoid(), name, number };
     if (
       this.state.contacts.find(
-        contact => contact.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+        contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
       return alert(`${name} is already in contacts!`);
@@ -49,7 +49,7 @@ export class App extends Component {
     const { filter, contacts } = this.state;
     const filterLowCase = filter.toLowerCase();
     return contacts.filter(contact =>
-      contact.name.toLocaleLowerCase().includes(filterLowCase)
+      contact.name.toLowerCase().includes(filterLowCase)
     );
   };
   deleteContact = contactId => {
